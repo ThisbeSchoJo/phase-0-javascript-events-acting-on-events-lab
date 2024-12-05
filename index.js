@@ -27,3 +27,31 @@ document.addEventListener("keydown", function (e) {
     moveDodgerRight();
   }
 });
+
+function moveDodgerUp() {
+  const upNumbers = dodger.style.bottom.replace("px", "");
+  const up = parseInt(upNumbers, 10);
+
+  if (up < 380) {
+    dodger.style.bottom = `${up + 1}px`;
+  }
+}
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowUp") {
+    moveDodgerUp();
+  }
+});
+
+function moveDodgerDown() {
+  const downNumbers = dodger.style.bottom.replace("px", "");
+  const down = parseInt(downNumbers, 10);
+
+  if (down > 0) {
+    dodger.style.bottom = `${down - 1}px`;
+  }
+}
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowDown") {
+    moveDodgerDown();
+  }
+});
